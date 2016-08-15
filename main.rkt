@@ -167,8 +167,8 @@
        [init-value "#FF0000"]))
 (define tfFontName
   (new text-field%
-       [label "FontName (e.g. \"courier\")"] [parent frmConfig]
-       [init-value "\"courier\""]))
+       [label "FontName (e.g. courier)"] [parent frmConfig]
+       [init-value "courier"]))
 (define tfFontSize
   (new text-field%
        [label "FontSize (e.g. 12pt)"] [parent frmConfig]
@@ -189,7 +189,7 @@
                     "\"" (send tfHashtag get-value) "\" "
                     "\"" (send tfLitStr get-value) "\" "
                     "\"" (send tfParen get-value) "\" "
-                    (send tfFontName get-value) " "
+                    "\"" (send tfFontName get-value) "\" "
                     "\"" (send tfFontSize get-value) "\" "
                     ")")
      outf)))
