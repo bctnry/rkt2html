@@ -97,8 +97,9 @@
                      (string-append hold
                                     currentToken
                                     "<font class=\"comment\">;"))]
-         [#\" (parse "\"" 'inString rst
-                     (string-append hold currentToken))]
+         [#\" (if (string=? "#\\" currentToken)
+                  (parse (string-append currentToken "\"") 'normal rst hold)
+                  (parse "\"" 'inString rst (string-append hold currentToken)))]
          [#\space
           (cond
             ((isKeyword currentToken)
